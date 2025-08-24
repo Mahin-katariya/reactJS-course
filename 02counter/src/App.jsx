@@ -8,7 +8,17 @@ function App() {
 
   const addValue = () => {
     if(counter < 20){
+      /*setCounter(++counter);
       setCounter(++counter);
+      setCounter(++counter);
+      setCounter(++counter); */
+      // when these many setCounters are passed, React see's it as a repition on the same initial state is being changed so it sends the this entire update in one batch and rather than sending it individually.
+
+      setCounter(counter => counter + 1);
+      setCounter(counter => counter + 1);
+      setCounter(counter => counter + 1);
+
+
     }
     console.log("value of counter: ",counter);
     // counter = counter + 1;
